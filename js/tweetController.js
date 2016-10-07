@@ -1,13 +1,14 @@
 tweetApp.controller('tweetController', function($scope, $http, $routeParams){
 	$scope.test = "I am working!";
     $scope.tweets = tweets;
+    var searchTerm = '';
 
     console.log($routeParams);
 
     if($routeParams.searchTerm){
-        var searchTerm = $routeParams.searchTerm;
+        searchTerm = $routeParams.searchTerm;
     }else{
-        var searchTerm = 'trump';
+        searchTerm = '';
     }
 
     $http({
